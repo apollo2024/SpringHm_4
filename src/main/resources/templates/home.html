@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Главная страница</title>
+</head>
+<body>
+<h1>Привет, мир!</h1>
+<p>Это простой сайт, который показывает список книг.</p>
+<ul th:each="book : ${books}">
+    <li>
+        <strong th:text="${book.title}">Название</strong>
+        <em th:text="${book.author}">Автор</em>
+        <p th:text="${book.description}">Описание</p>
+    </li>
+</ul>
+<a href="/add">Добавить книгу</a>
+</body>
+</html>

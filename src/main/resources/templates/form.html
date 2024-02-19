@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Форма ввода</title>
+</head>
+<body>
+<h1>Добавить книгу</h1>
+<p>Заполните поля ниже и нажмите кнопку "Отправить".</p>
+<form action="/add" method="post" th:object="${book}">
+    <p>
+        <label for="title">Название:</label>
+        <input type="text" id="title" th:field="*{title}">
+    </p>
+    <p>
+        <label for="author">Автор:</label>
+        <input type="text" id="author" th:field="*{author}">
+    </p>
+    <p>
+        <label for="description">Описание:</label>
+        <textarea id="description" th:field="*{description}"></textarea>
+    </p>
+    <p>
+        <button type="submit">Отправить</button>
+    </p>
+</form>
+</body>
+</html>
